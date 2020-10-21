@@ -1,9 +1,14 @@
 package microservices.book.socialmultiplication.domain;
 
-public class Multiplication {
+import lombok.*;
 
-    private int factorA;
-    private int factorB;
+@Getter
+@ToString
+@EqualsAndHashCode
+public final class Multiplication {
+
+    private final int factorA;
+    private final int factorB;
 
     private long result;
 
@@ -13,24 +18,7 @@ public class Multiplication {
         this.result = factorA * factorB;
     }
 
-    public int getFactorA() {
-        return factorA;
-    }
-
-    public int getFactorB() {
-        return factorB;
-    }
-
-    public long getResult() {
-        return result;
-    }
-
-    @Override
-    public String toString() {
-        return "Multiplication{" +
-                "factorA=" + factorA +
-                ", factorB=" + factorB +
-                ", result(A*B)=" + result +
-                '}';
+    public Multiplication() {
+        this(0,0);
     }
 }
